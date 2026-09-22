@@ -1,0 +1,1 @@
+{"name":"ProceduralLight.Runtime","rootNamespace":"ProceduralLight","references":["Unity.RenderPipelines.Core.Runtime","Unity.RenderPipelines.Universal.Runtime"],"autoReferenced":true}

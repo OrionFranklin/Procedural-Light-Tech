@@ -1,0 +1,1 @@
+{"name":"ProceduralLight.Editor","references":["ProceduralLight.Runtime","Unity.RenderPipelines.Universal.Runtime","Unity.RenderPipelines.Core.Runtime"],"includePlatforms":["Editor"]}
