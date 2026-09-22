@@ -52,7 +52,9 @@ namespace ProceduralLight
             }
             Upload();
         }
-        static Vector3 RGB(Color c)=>new Vector3(c.r,c.g,c.b);
+        // Inspector/RenderSettings colors are sRGB; shader irradiance is linear in
+        // linear projects. Mixing them creates a bright box around the local grid.
+        static Vector3 RGB(Color c){if(QualitySettings.activeColorSpace==ColorSpace.Linear)c=c.linear;return new Vector3(c.r,c.g,c.b);}
         bool Ray(Vector3 p,Vector3 d,out RaycastHit hit,float distance){LastRayCount++;return Physics.Raycast(p,d,out hit,distance,geometry,QueryTriggerInteraction.Ignore);}
         public DiffuseLobe Trace(Vector3 position)
         {
